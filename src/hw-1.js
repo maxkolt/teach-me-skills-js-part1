@@ -2,20 +2,30 @@
  * Напишите код, чтобы вызвав эту фукнцию с 2 чсилами и одной строкой вы получили их сумму в переменной sum
  * если строка придет с символами, то результат функции должна быть строка "неверные данные"
  */
-function task1(num1, num2, str) {
-  let sum = null;
-  // ваш код должен быть ниже этой строки
+function task1(num1, num2, string) {
+  let sum;
 
-  // ваш код должен быть выше этой строки
+  const parsedNumber = Number(string); // NaN
+
+  if (parsedNumber == 'NaN' || parsedNumber != 0) {
+    sum = 'неверные данные';
+  } else {
+    sum = num1 + num2 + parsedNumber;
+  }
   return sum;
 }
+
+console.log(task1(1, 2, '0'));
+console.log(task1(1, 2, 'am'));
+
+
 
 /**
  * Код ниже перепишете с использованием switch
 
-  let result = null;
+ let result = null;
 
-  if (age > 5) {
+ if (age > 5) {
     result = 'Он старше 5 лет';
   } else if (age > 8) {
     result = 'Он старше 8 лет';
