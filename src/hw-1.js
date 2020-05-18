@@ -89,7 +89,6 @@ function task3() {
     // ваш код должен быть выше этой строки
     return result;
 }
-
 console.log(task3());
 
 
@@ -128,13 +127,11 @@ function task6(number) {
   for (let i = 0; i < 10; i++) {
     for (let j = 0; j < 10; j++) {
         // ваш код должен быть ниже этой строки
-
         result += i + j;
         result += number;
         // ваш код должен быть выше этой строки
     }
   }
-
   return result;
 }
 
