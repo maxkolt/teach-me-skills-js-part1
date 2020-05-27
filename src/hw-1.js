@@ -3,21 +3,17 @@
  * если строка придет с символами, то результат функции должна быть строка "неверные данные"
  */
 function task1(num1, num2, string) {
-  let sum;
-
-  const parsedNumber = Number(string); // NaN
-
-  if (parsedNumber == 'NaN' || parsedNumber != 0) {
-    sum = 'неверные данные';
-  } else {
-    sum = num1 + num2 + parsedNumber;
-  }
-  return sum;
+    let sum;
+    const parsedNumber = Number(string); // NaN
+    if (parsedNumber == 'NaN' || parsedNumber != 0) {
+        sum = 'неверные данные';
+    } else {
+        sum = num1 + num2 + parsedNumber;
+    }
+    return sum;
 }
-
 console.log(task1(1, 2, '0'));
 console.log(task1(1, 2, 'am'));
-
 
 
 /**
@@ -68,7 +64,6 @@ function task2(age) {
     // ваш код должен быть выше этой строки
     return result;
 }
-
 console.log(task2(6));
 
 
@@ -106,8 +101,7 @@ function task4() {
     }
     // ваш код должен быть выше этой строки
 }
-
-task4()
+console.log(task4())
 
 /**
  * В функцию приходят 4 аргумента все разных типов, какие бы не были значения результат всегда должен быть один и тот же, true
@@ -118,21 +112,22 @@ function task5(num, str, bool, val) {
     return result;
 }
 console.log(task5(1, 'fuck', true, 'd'))
+
 /**
  * Вы должны дополнить код так, чтобы переменная result была не больше number
  */
 function task6(number) {
-  let result = 0;
+    let result = 0;
 
-  for (let i = 0; i < 10; i++) {
-    for (let j = 0; j < 10; j++) {
-        // ваш код должен быть ниже этой строки
-        result += i + j;
-        result += number;
-        // ваш код должен быть выше этой строки
+    for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+            // ваш код должен быть ниже этой строки
+            result += i + j;
+            result += number;
+            // ваш код должен быть выше этой строки
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 
@@ -144,25 +139,27 @@ function task6(number) {
 function task7() {
     let result = null;
     // ваш код должен быть ниже этой строки
-    result = ''
+    result = '';
     let myName = 'Max';
-    for(let i = 0; i <= myName.length; i++) {
-        result+=myName[i]
+    for (let i = 0; i < myName.length; i++) {
+        result += myName[i]
     }
     // ваш код должен быть выше этой строки
     return result;
 }
-
+console.log(task7());
 
 /**
  * Задание с *.
  * Написать код таким образом, чтобы можно было выполнить любое матемптичиское действие с num и str
  */
 function task8(num) {
-  let str = '10n';
-  let result = null;
-  // ваш код должен быть ниже этой строки
-
-  // ваш код должен быть выше этой строки
-  return result;
+    let str = '10n';
+    let result = null;
+    // ваш код должен быть ниже этой строки
+    str = str.replace('n', '');
+    Number(str);
+    // ваш код должен быть выше этой строки
+    return result;
 }
+console.log(task8(555))
