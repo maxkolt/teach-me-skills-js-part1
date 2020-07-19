@@ -12,9 +12,9 @@ function task1(num) {
     // ваш код должен быть ниже этой строки
     let values = Object.values(obj);
 
-    for(x=0; x < values.length; x++){
+    for (x = 0; x < values.length; x++) {
         let current = values[x];
-        if( !isNaN(parseFloat(current)) && isFinite(current)){
+        if (!isNaN(parseFloat(current)) && isFinite(current)) {
             let result = current * num;
             console.log(result);
         }
@@ -22,6 +22,7 @@ function task1(num) {
     // ваш код должен быть выше этой строки
     return obj;
 }
+
 task1(5);
 
 /**
@@ -43,6 +44,7 @@ function task2(num) {
     // ваш код должен быть выше этой строки
     return sum;
 }
+
 console.log(task2());
 
 /**
@@ -55,14 +57,15 @@ function task3(obj, property) {
     return property in obj;
     // ваш код должен быть выше этой строки
 }
+
 const key = 'рост';
 const notOk = 'NOT_OK';
-const value =  185
-const obj = { 'рост' : value };
+const value = 185
+const obj = {'рост': value};
 const okString = task3(obj, key);
 console.log(okString);
-const notOkString  = task3(obj, notOk);
-console.log(notOkString );
+const notOkString = task3(obj, notOk);
+console.log(notOkString);
 
 /**
  * Написать логику, что скопирует все свойства из obj в result.
@@ -76,7 +79,9 @@ function task4(obj) {
     // ваш код должен быть выше этой строки
     return result;
 }
+
 console.log(task4({age: '25', name: 'leon'}));
+
 
 /**
  * Ваша реализацимя должна проверить в каком объекте obj1 или obj2 свойств больше, в переменную result
@@ -85,34 +90,50 @@ console.log(task4({age: '25', name: 'leon'}));
 function task5(obj1, obj2) {
     let result = null;
     // ваш код должен быть ниже этой строки
-
+    let quantity1 = null;
+    let quantity2 = null;
+    for (const key in obj1) {
+        quantity1++;
+    }
+    for (const key in obj2) {
+        quantity2++;
+    }
+    result = quantity1 < quantity2 ? 2 : quantity1 > quantity2 ? 1 : 0;
     // ваш код должен быть выше этой строки
     return result;
 }
+
 
 /**
  * Написать логику, которая должна удалять все свойства из объекта obj.
  */
 function task6(obj) {
     // ваш код должен быть ниже этой строки
-
+    for ( const key in obj) {
+        delete obj[key];
+    }
     // ваш код должен быть выше этой строки
     return obj;
 }
+
+
+
 
 /**
  * Задание с *.
  * Написать цикл (не for..in), который пройдется по объекту obj и выведет все значения в консоль
  */
 function task7(obj) {
-    // ваш код должен быть ниже этой строки
+//     // ваш код должен быть ниже этой строки
+    const values = Object.values(obj);
+//     // ваш код должен быть выше этой строки
 
-    // ваш код должен быть выше этой строки
-
-    for (/* написать условие */) {
-        console.log();
+    for(let i = 0; i < values.length; i++) {
+        console.log(values[i]);
     }
 }
+
+
 
 /**
  * Задание с *.
@@ -128,18 +149,32 @@ function task7(obj) {
 function task8(obj, str) {
     let result = null;
     // ваш код должен быть ниже этой строки
-
+    let first = null;
+    for ( const key in obj) {
+        first = false;
+    }
+    if (first === false) {
+        result = 'в объекте есть ключи, ' + str
+    }
+    else {
+        result = 'Hello ' + str
+    }
     // ваш код должен быть выше этой строки
     return result;
 }
+
 
 /**
  * Задание с *.
  * Все аргументы функции должны добавляться в массив.
  */
-function task9() {
-    const array = [];
+const array = [];
+function task9(... array) {
     // ваш код должен быть ниже этой строки
+
+    let newArray = Array.from(arguments);
+    array.push(newArray);
+    return Array.from(arguments)
 
     // ваш код должен быть выше этой строки
     return array;
